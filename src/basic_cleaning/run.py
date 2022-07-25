@@ -1,18 +1,19 @@
 #!/usr/bin/env python
 """
-Performs basic cleaning on the data and save the results in Weights & Biases
+Download from W&B the raw dataset and apply some basic data cleaning, exporting the result to a new artifact
 """
 import argparse
 import logging
-import wandb
+import os
 
+import pandas as pd
+import wandb
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
 
 
 def go(args):
-
     run = wandb.init(job_type="basic_cleaning")
     run.config.update(args)
 
@@ -56,9 +57,7 @@ def go(args):
 
 
 if __name__ == "__main__":
-
-    parser = argparse.ArgumentParser(description="This steps cleans the data")
-
+    parser = argparse.ArgumentParser(description="A very basic data cleaning")
 
     parser.add_argument(
         "--input_artifact",

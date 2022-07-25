@@ -63,6 +63,7 @@ def test_similar_neigh_distrib(data: pd.DataFrame, ref_data: pd.DataFrame, kl_th
 ########################################################
 # Implement here test_row_count and test_price_range   #
 ########################################################
+
 def test_row_count(data: pd.DataFrame):
     """
     Check if the dataset is composed by the correct number of rows
